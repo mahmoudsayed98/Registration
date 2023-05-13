@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Mahmoud Sayed\source\WebApi app\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-05-13T18:04:20.3519919Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DBConnection">
+      <Value>server=DESKTOP-MG57OOM%3bdatabase=UserDB%3bTrustServerCertificate=True%3b Trusted_Connection=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
