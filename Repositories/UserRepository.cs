@@ -47,24 +47,5 @@ namespace WebApi_app.Repositories
             string hashedPassword = EncryptionService.HashPassword(password);
              return user.Password == hashedPassword;
         }
-
-        public User GetUserById(int userId)
-        {
-            var userEntity = appDbContext.Users.FirstOrDefault(u => u.Id == userId);
-
-            if (userEntity == null)
-            {
-                return null; 
-            }
-
-            var user = new User
-            {
-                FirstName = userEntity.FirstName,
-                FatherName = userEntity.FatherName,
-                FamilyName = userEntity.FamilyName,
-            };
-
-            return user;
-        }
     }
 }
