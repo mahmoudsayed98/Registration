@@ -2,10 +2,15 @@ using Microsoft.EntityFrameworkCore;
 using WebApi_app.Interfaces;
 using WebApi_app.Models;
 using WebApi_app.Repositories;
+using log4net;
+using log4net.Config;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var logRepository = LogManager.GetRepository(System.Reflection.Assembly.GetEntryAssembly());
+XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
@@ -27,5 +32,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

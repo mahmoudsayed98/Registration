@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "l7fWXsQRwYiNpsjRc10BOXGrUfmQIfADUwpFwGkgbAXUj+wCadWS3jYKPbNPD3W6UGlIXEZJsJlhaOh9TfE/+g==",
+  "dgSpecHash": "gB3m6E7pKJ9ucMBTVghzj2SF+FbEUDbzHFbmnVPQF4zQduPpYjCNIfxjVOKKPdb4cZ1pMD7logQF9twO1rbQ4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mahmoud Sayed\\source\\WebApi app\\WebApi app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Mahmoud Sayed\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

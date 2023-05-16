@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using WebApi_app.Repositories;
 using WebApi_app.Services;
+using log4net;
 
 namespace WebApi_app.Controllers
 {
@@ -15,7 +16,7 @@ namespace WebApi_app.Controllers
     {
         private readonly IUserRepository userRepository;
         private readonly EncryptionService EncryptionService = new EncryptionService();
-        private int userId;
+        private static readonly ILog log = LogManager.GetLogger(typeof(RegistrationController));
 
         public RegistrationController(IUserRepository userRepository)
         {
@@ -50,6 +51,8 @@ namespace WebApi_app.Controllers
                 BirthDate = userRegistrationDto.BirthDate.ToString()
             };
             userRepository.AddUser(user);
+            log.Info($"Profile added: {userRegistrationDto.FirstName} {userRegistrationDto.FamilyName}");
+
             return Ok("User registered successfully");
         }
         [HttpPost("/api/user/profile")]
@@ -70,6 +73,7 @@ namespace WebApi_app.Controllers
             }
             user.Address = EncryptionService.DecryptPersonalData(user.Address, credentials.Password);
             user.BirthDate = EncryptionService.DecryptPersonalData(user.BirthDate, credentials.Password);
+            log.Info($"Profile Viewed is: {credentials.Username}");
             return Ok(user);
         }
         [HttpPost("reset-password")]
@@ -92,6 +96,7 @@ namespace WebApi_app.Controllers
             userRepository.UpdateUser(user, resetPasswordDto);
             user.Address = EncryptionService.DecryptPersonalData(user.Address, resetPasswordDto.NewPassword);
             user.BirthDate = EncryptionService.DecryptPersonalData(user.BirthDate, resetPasswordDto.NewPassword);
+            log.Info($"Password Reset Successfully for : {resetPasswordDto.Username}");
             return Ok(user);
             }
 
